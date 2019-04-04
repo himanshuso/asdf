@@ -1,95 +1,240 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp1
+namespace group
 {
-    class CountrySide
+    class Program
     {
-        static void Main()
+        static void Main(string[] args)
+        {
+        }
+    }
+    class Student
+
+    {
+
+        String Student_name;
+
+        String StudentID;
+
+        double StudentGPA;
+
+
+
+        // TODO: change this implementation so that the program pulls names from a Text File:
+
+        // to do this, you must change the container for Student Names from Array to List
+
+        String[] names = new String[5] { "Bill", "Mary", "Laura", "Sam", "Steve" };
+
+        Random r1;
+
+
+
+        public Student()
 
         {
 
+            r1 = new Random();
+
+            Student_name = names[r1.Next(0, 4)];
+
+            StudentID = Convert.ToString(r1.Next(1000, 9999));
+
+            StudentGPA = Convert.ToDouble(r1.Next(1, 99));
+
         }
+
+
+
+        public double AverageStudentGPA()
+        {
+
+            // TO DO: implement the algorithm to calculate the Students' average GPA
+
+            return 0;
+
+        }
+
+    }
+
+
+
+    public interface IDataStructure
+
+    {
+
+        void Sort();
+
+    }
+
+
+
+    class DataStructureQueue : IDataStructure
+
+    {
+
+        // the QUEUE holds the classes (that is classroom of students!)
+
+        // TO DO: insert the contents of the Data File: Classroom Data Set 
+
+
+
+        public Queue q1 = new Queue();
+
+
+
+        Sort_DataStructure Sort1;
+
+
+
+        public void Sorter()
+        {
+
+            // TO DO : sort the Queue 
+
+        }
+
+
+
+        public void Run()
+
+        {
+
+            for (int i = 0; i < 20; i++)
+            {
+
+                q1.Enqueue(new Student());
+
+            }
+
+            Sort1 = new Sort_DataStructure(Sorter);
+
+        }
+
+        public void Sort()
+        {
+
+
+
+        }
+
+
+
+    }
+
+
+
+    class DataStructureStack : IDataStructure
+
+    {
+
+        // the STACK holds the Students
+
+        public Stack s1 = new Stack();
+
+
+
+        Sort_DataStructure Sort1;
+
+
+
+        public void Sorter()
+        {
+
+            // TO DO : sort the Stack
+
+        }
+
+
 
         public void Run()
         {
-            Alst = new Village("Alst", false);
-            Scarton = new Village("scarton", false);
-            Wessig = new Village("Wessig", true);
 
-            Alst.distanceToEastVillage = 14;
-            Alst.distanceToEastVillage = 19;
-            Alst.west = Scarton;
-            Alst.east = Wessig;
+            for (int i = 0; i < 20; i++)
 
-            Scarton.west = null;
-            Scarton.west = null;
+            {
+
+                s1.Push(new Student());
+
+            }
+
+
+
+            Sort1 = new Sort_DataStructure(Sorter);
 
         }
 
 
-        // Create the LinkedList to reflect the Map in the PowerPoint Instructions
 
-        Village toronto;
+        public void Sort() { }
 
-        Village Hamilton;
+    }
 
-        Village Alst;
 
-        Village Wessig;
 
-        Village winnipeg;
+}
 
-        Village United;
 
-        Village Scarton;
 
-        void CountrySide.TorontoVillage(Village CurrentVillage)
+namespace BubbleSort
+
+{
+
+    class MySort
+
+    {
+
+        static void Main2(string[] args)
 
         {
-            try
+
+            int[] arr = { 78, 55, 45, 98, 13 };
+
+            int temp;
+
+
+
+            for (int j = 0; j <= arr.Length - 2; j++)
+
             {
-                if (CurrentVillage.isAstrildgeHere)
+
+                for (int i = 0; i <= arr.Length - 2; i++)
+
                 {
-                    Console.WriteLine("I saw a Lion in {0}", CurrentVillage.VillageName);
-                    Console.WriteLine("*******eaten by Lion!******");
-                    return;
+
+                    if (arr[i] > arr[i + 1])
+
+                    {
+
+                        temp = arr[i + 1];
+
+                        arr[i + 1] = arr[i];
+
+                        arr[i] = temp;
+
+                    }
+
                 }
-            }
-    }
-
-
-        class Village
-
-        {
-
-            public Village(string _villageName, bool _isAHere)
-            {
-
-                isAstrildgeHere = _isAHere;
-
-                VillageName = _villageName;
 
             }
 
 
 
-            public Village west;
+            Console.WriteLine("Sorted:");
 
-            public Village east;
+            foreach (int p in arr)
 
-            public string VillageName;
+                Console.Write(p + " ");
 
-            public int distanceToNextVillage;
+            Console.Read();
 
-            public int distanceToPreviousVillage;
-
-            public bool isAstrildgeHere;
-
-            public int distanceToEastVillage { get; internal set; }
         }
+
     }
+
 }
